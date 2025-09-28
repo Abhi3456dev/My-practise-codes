@@ -1,0 +1,21 @@
+import { useState } from "react";
+function Practise() {
+    const[username,setUsername]=useState('')
+    const Submithandler=(e)=>{
+       e.preventDefault()
+       console.log(username)
+       setUsername("")
+    }
+  return (
+    <div>
+      <form onSubmit={(e)=>{
+        Submithandler(e)
+      }}>
+        <input type="text" value={username} onChange={(e)=>{setUsername(e.target.value)}} 
+        className="p-4 not-odd: bg-amber-200 px-4 py-5 " />
+        <button className="p-4 bg-amber-600 px-5 py-6 rounded-b-4xl justify-evenly flex-7">Submit The Form</button>
+      </form>
+    </div>
+  );
+}
+export default Practise;
